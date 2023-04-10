@@ -1,0 +1,22 @@
+type Languages =
+	|'ru'
+	|'fr'
+	|'en'
+	|'nl'
+	|'th'
+	|'pt_br'
+	|'zh_cn'
+	|'ko'
+	|'de'
+	|'tr'
+	|'it'
+	|'zh_sg'
+	|'uk'
+	|'es'
+	|'cs'
+	|'es_mx'
+	|'ja'
+	|'pl'
+	|'zh_tw'
+
+export default Languages;

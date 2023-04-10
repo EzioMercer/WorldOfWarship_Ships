@@ -1,0 +1,82 @@
+@import "Helpers/SCSS/Colors.scss";
+@import "Helpers/SCSS/Shapes.scss";
+
+$padding-horizontal: 12px;
+
+.multiselect {
+  width: 100%;
+
+  .wrapper {
+    position: relative;
+    width: 100%;
+    margin: 8px 0;
+
+    cursor: pointer;
+
+    color: $white;
+
+    .selected {
+      display: flex;
+      align-items: center;
+      height: $filter-fields-height;
+      padding: 0 12px;
+      margin-bottom: 2px;
+
+      background-color: $filters-bg;
+      border: 1px solid $turquoise;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 100%;
+        right: $padding-horizontal;
+
+        cursor: pointer;
+
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAICAMAAAARDVXAAAAAElBMVEX///////9MaXH///////////9w+/2zAAAABnRSTlNAgAB/YCDRJtltAAAAMklEQVQI102KWRYAIAgCx5b7XzkT8uUHMAhDt+3Ygp+JcIFxuUCIpPilsn5knHfWqMUBMfAAtHrH0RsAAAAASUVORK5CYII=);
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: rotateX(180deg);
+      }
+
+      .truncated {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 90%;
+
+        &::before {
+          content: attr(data-value);
+        }
+      }
+    }
+
+    .options {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      position: absolute;
+      padding: 8px 12px;
+
+      background-color: $filters-bg;
+      border: 1px solid $turquoise;
+    }
+
+    &.open {
+      .selected {
+        &::after {
+          transform: rotateX(0deg);
+        }
+      }
+      .options {
+        display: flex;
+      }
+    }
+  }
+
+  select {
+    display: none;
+  }
+}

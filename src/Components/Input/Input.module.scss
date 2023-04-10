@@ -1,0 +1,22 @@
+@import "Helpers/SCSS/Colors.scss";
+@import "Helpers/SCSS/Shapes.scss";
+
+.input {
+  width: 100%;
+
+  input {
+    width: 100%;
+    height: $filter-fields-height;
+    margin: 8px 0;
+    padding: 8px 12px;
+
+    background-color: $filters-bg;
+    color: $white;
+    border: 1px solid $turquoise;
+
+    &:focus {
+      outline: none;
+      border-color: $white;
+    }
+  }
+}

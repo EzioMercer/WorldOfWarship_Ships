@@ -1,0 +1,63 @@
+@import "Helpers/SCSS/Colors.scss";
+
+$header-height: 48px;
+$border-color: $turquoise;
+
+@mixin bg-and-border {
+  background-color: $filters-bg;
+  border: 1px solid $border-color;
+}
+
+.filters {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 32px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @include bg-and-border;
+
+    cursor: pointer;
+
+    .icon {
+      height: $header-height;
+      width: $header-height;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOAgMAAABSqtRjAAAAAXNSR0IB2cksfwAAAAxQTFRFAAAA////////////OMA7qAAAAAR0Uk5TAJdLVUND+1oAAAAiSURBVHicYwgFAQYIiQw4gQIFUBIFiIaGwElkwBR6AEoCANgFCe1oa8ERAAAAAElFTkSuQmCC);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .title {
+      text-transform: uppercase;
+    }
+  }
+
+  .body {
+    position: absolute;
+    top: $header-height;
+    transition: .5s;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    padding: 15px 20px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    @include bg-and-border;
+    border-top: none;
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

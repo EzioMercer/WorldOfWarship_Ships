@@ -1,0 +1,18 @@
+@import "Helpers/SCSS/Colors.scss";
+
+$border-radius: 6px;
+$filter-fields-height: 35px;
+
+@mixin default-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  margin: 4px 0;
+
+  color: $white;
+
+  border-radius: $border-radius;
+  border: 1px solid $gray;
+}
+
