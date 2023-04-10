@@ -39,7 +39,7 @@ const Ship = ({
 					(isTypesLoading || isNationsLoading) ? <LoadingSpinner /> :
 						<>
 							<span>Detailed info</span>
-							<div><b>Description:</b> {shipData.localization.description.en}</div>
+							<div className={styles.description}><b>Description:</b> {shipData.localization.description.en}</div>
 							<div><b>Nationality:</b> {shipNation?.localization.mark.en}</div>
 							<div><b>Type:</b> {shipType?.localization.mark.en}</div>
 						</>

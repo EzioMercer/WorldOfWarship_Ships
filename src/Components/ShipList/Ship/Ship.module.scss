@@ -9,14 +9,12 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 256px;
-  padding: 4px;
+  padding: 8px;
   word-break: break-all;
 
   background-image: $turquoise-gradient;
   @include box-shadow(rgba(0, 0, 0, 0.4));
 
-  cursor: pointer;
   overflow: hidden;
 
   &:hover {
@@ -73,7 +71,14 @@
     }
 
     div {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+    }
+
+    .description {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
 }
